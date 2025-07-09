@@ -24,3 +24,9 @@ console.log(Total); // Output: total sum of all prices
 // This will return an array of matching objects
 let sum = ArrayInObj.filter(item => (item.price >= 200000 && item.Name === 'BMW'));
 console.log(sum); // Output: [] (empty array since no BMW meets criteria)
+//map retun new array of element
+const numbers = [1, 2, 3, 4];
+
+const doubled = numbers.map(num => num * 2);
+
+console.log(doubled); // [2, 4, 6, 8]
