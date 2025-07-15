@@ -71,3 +71,82 @@ methodTwo() {
 let hhh = new inhert
 hhh.methodTwo()
 //hhh.myFunk()//in this way we can inhert any class into an other class it mean we can access the all properties of other class by inheritance by the keyWord of extends
+// ================================ four pilors of oops ======================
+// 1) Polymorphism =>Polymorphism allows methods to behave differently based on the object calling them, even if they have the same name
+class Animal {
+  speak() {
+    console.log("Animal speaks");
+  }
+}
+
+class Cat extends Animal {
+  speak() {
+    console.log("Meow");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Woof");
+  }
+}
+/* Animal speaks
+Meow
+Woof */
+const animals = [new Animal(), new Cat(), new Dog()];
+animals.forEach(animal => animal.speak());
+// 2)  Inheritance =>  Inheritance allows a class (child) to inherit properties and methods from another class (parent). why use ? Reduces code duplication
+//Encourages reuse and organization 
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log(`${this.name} barks`);
+  }
+}
+
+const d = new Dog("Tommy");
+d.speak(); // From Animal
+d.bark();  // From Dog
+// 3) Abstraction => Abstraction hides complex implementation and exposes only essential parts. Why ?Simplifies usage Reduces complexity Protects users from internal logic
+class Car {
+  startEngine() {
+    this.#injectFuel();
+    this.#ignite();
+    console.log("Car started");
+  }
+
+  #injectFuel() {
+    console.log("Fuel injected");
+  }
+
+  #ignite() {
+    console.log("Engine ignited");
+  }
+}
+// 4) Encapsulation  =>  Encapsulation means bundling data (properties) and behavior (methods) inside one unit (class) and restricting direct access to some data.
+class BankAccount {
+  #balance = 0;
+
+  constructor(owner) {
+    this.owner = owner;
+  }      // # is use to make it private /* Normally in JavaScript, all properties and methods of a class are public — they can be accessed and modified from outside the class.
+
+But with #, you can make them private, so they cannot be accessed or modified directly from outside the class */
+
+  deposit(amount) {
+    if (amount > 0) this.#balance += amount;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
