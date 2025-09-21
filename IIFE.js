@@ -1,7 +1,7 @@
 // IIFE: Immediately Invoked Function Expression
 // This function runs automatically as soon as it is defined
 
-(function funk() {
+(function funk() { // a name with function in this condition will be known as named IIFE
     console.log('Hey, I am Ali');
 })();
 
