@@ -107,3 +107,25 @@ class Car {
 let car = new Car();
 car.startEngine();
 // car.#injectFuel();  Not accessible
+
+/*             Interview
+Inheritance
+
+Q: What are the benefits of inheritance?
+A: Code reuse, scalability, and organization.
+
+Encapsulation
+
+Q: How is encapsulation implemented in JavaScript?
+A: By using private fields (e.g., #balance) and providing public getter/setter methods.
+
+Abstraction
+
+Q: What is abstraction in OOP?
+A: It hides internal implementation details and shows only essential features.
+
+Polymorphism
+
+Q: What is polymorphism?
+A: It allows methods to behave differently based on the object calling them (method overriding).
+*/
